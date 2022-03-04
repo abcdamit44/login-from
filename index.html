@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .container {
+            width: 60%;
+            margin: 5vw auto;
+        }
+        
+        .mt-3 {
+            margin-top: 2.5vw;
+        }
+        
+        input {
+            padding: 5px 20px;
+            outline: none;
+        }
+        
+        button {
+            padding: 10px 15px;
+            color: #fff;
+            background-color: rosybrown;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .success {
+            background-color: green;
+            padding: 10px;
+            color: #fff;
+            margin-top: 2vw;
+            border-radius: 5px;
+        }
+        
+        .danger {
+            background-color: red;
+            padding: 10px;
+            color: #fff;
+            margin-top: 2vw;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="form">
+            <div class="mt-3">
+                <input type="text" id="name" placeholder="Enter your Name">
+            </div>
+            <div class="mt-3">
+                <input type="email" id="email" placeholder="Enter your Email">
+            </div>
+            <button class="mt-3" onclick="check()">Submit</button>
+        </div>
+        <div id="msg"></div>
+    </div>
+    <script>
+        let name = document.getElementById('name');
+        let email = document.getElementById('email');
+        let msg = document.getElementById('msg');
+
+        function check() {
+            if (name.value == '' || email.value == '') {
+                msg.classList.remove("success");
+                msg.classList.add("danger");
+                msg.innerHTML = "Something Wrong"
+            } else {
+                msg.classList.remove("danger");
+                msg.classList.add("success");
+                msg.innerHTML = "Successfully Send"
+            }
+
+        }
+    </script>
+</body>
+
+</html>
