@@ -17,6 +17,10 @@
         .container {
             width: 60%;
             margin: 5vw auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
         
         .mt-3 {
@@ -44,6 +48,7 @@
             color: #fff;
             margin-top: 2vw;
             border-radius: 5px;
+            width: 50%;
         }
         
         .danger {
@@ -52,6 +57,7 @@
             color: #fff;
             margin-top: 2vw;
             border-radius: 5px;
+            width: 50%;
         }
     </style>
 </head>
@@ -84,6 +90,8 @@
                 msg.classList.remove("danger");
                 msg.classList.add("success");
                 msg.innerHTML = "Successfully Send"
+                name.value = ''
+                email.value = ''
             }
 
         }
